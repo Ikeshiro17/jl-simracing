@@ -1,63 +1,138 @@
-export default function JLSimracingLanding() {
+const systemModules = [
+  {
+    id: "01",
+    title: "Dashboard UI",
+    description:
+      "Interfaces cockpit inspirées GT3 développées autour d’une architecture claire, rapide et immersive.",
+  },
+  {
+    id: "02",
+    title: "Telemetry System",
+    description:
+      "Système pensé pour la lisibilité pilote, les données temps réel et la cohérence visuelle.",
+  },
+  {
+    id: "03",
+    title: "RPM & Lighting",
+    description:
+      "Retour lumineux subtil inspiré du motorsport moderne sans surcharge gaming.",
+  },
+  {
+    id: "04",
+    title: "Immersion Layer",
+    description:
+      "Combinaison de hardware, UI et feedbacks sensoriels pour créer une expérience cockpit complète.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,0,0,0.12),transparent_40%)] pointer-events-none" />
+    <main className="relative overflow-hidden bg-[#050505] text-[#f5f5f5]">
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(185,28,28,0.18),transparent_40%)]" />
+
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:80px_80px]" />
+
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(0,0,0,0.5))]" />
+      </div>
 
       {/* Header */}
-      <header className="relative z-10 flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-sm">
-        <div>
-          <h1 className="text-2xl font-bold tracking-[0.3em] uppercase">
-            JL Simracing
-          </h1>
-          <p className="text-sm text-white/50 mt-1 tracking-wide">
-            Engineering Cockpit Immersif
-          </p>
-        </div>
+      <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-black/40 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.35em] text-red-500">
+              JL Simracing
+            </p>
 
-        <nav className="hidden md:flex gap-8 text-sm text-white/70 uppercase tracking-wider">
-          <a href="#vision" className="hover:text-white transition-colors">
-            Vision
-          </a>
-          <a href="#system" className="hover:text-white transition-colors">
-            Système
-          </a>
-          <a href="#philosophy" className="hover:text-white transition-colors">
-            Philosophie
-          </a>
-          <a href="#future" className="hover:text-white transition-colors">
-            Futur
-          </a>
-        </nav>
+            <h1 className="mt-2 text-lg font-semibold uppercase tracking-[0.18em] text-white">
+              Motorsport Engineering
+            </h1>
+          </div>
+
+          <nav className="hidden items-center gap-8 text-xs uppercase tracking-[0.2em] text-white/55 md:flex">
+            <a
+              href="#vision"
+              className="transition-all duration-500 hover:text-white"
+            >
+              Vision
+            </a>
+
+            <a
+              href="#system"
+              className="transition-all duration-500 hover:text-white"
+            >
+              System
+            </a>
+
+            <a
+              href="#philosophy"
+              className="transition-all duration-500 hover:text-white"
+            >
+              Philosophy
+            </a>
+
+            <a
+              href="#future"
+              className="transition-all duration-500 hover:text-white"
+            >
+              Future
+            </a>
+          </nav>
+        </div>
       </header>
 
       {/* Hero */}
-      <section className="relative z-10 px-8 md:px-20 py-28 md:py-40">
-        <div className="max-w-5xl">
-          <div className="inline-flex items-center gap-2 border border-red-500/30 bg-red-500/10 rounded-full px-4 py-2 text-xs uppercase tracking-[0.25em] text-red-300 mb-8">
+      <section className="relative z-10 px-6 pb-36 pt-28 md:px-10 md:pb-44 md:pt-40">
+        <div className="mx-auto max-w-7xl">
+          <div className="inline-flex items-center gap-3 rounded-full border border-red-500/20 bg-red-500/[0.06] px-5 py-2 text-[11px] uppercase tracking-[0.35em] text-red-300 backdrop-blur-sm">
             GT3 • Endurance • Formula Inspired
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-black leading-none tracking-tight max-w-4xl">
-            Construire un
-            <span className="text-red-500"> Cockpit </span>
-            Vivant.
-          </h2>
+          <div className="mt-10 max-w-5xl">
+            <h2 className="max-w-4xl text-5xl font-black leading-[0.92] tracking-[-0.05em] md:text-7xl xl:text-[7rem]">
+              Engineering
+              <span className="block text-red-600">
+                Immersive Cockpit Systems
+              </span>
+              Built Independently.
+            </h2>
 
-          <p className="mt-8 text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-            JL Simracing est un projet simracing développé en solo, centré sur
-            l’immersion cockpit, l’engineering intelligent, les sensations
-            pilote et une architecture inspirée du motorsport réel.
-          </p>
+            <p className="mt-10 max-w-2xl text-base leading-relaxed text-white/60 md:text-xl">
+              JL Simracing développe un environnement cockpit inspiré du
+              motorsport moderne autour d’une approche solo-engineered,
+              immersive et maintenable.
+            </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button className="px-6 py-3 rounded-2xl bg-red-600 hover:bg-red-500 transition-colors text-sm uppercase tracking-wider font-semibold shadow-lg shadow-red-500/20">
-              Découvrir la Vision
-            </button>
+            <div className="mt-12 flex flex-wrap gap-4">
+              <button className="rounded-2xl border border-red-500/30 bg-red-600 px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-500 hover:bg-red-500 hover:shadow-[0_0_40px_rgba(220,38,38,0.25)]">
+                Explore Vision
+              </button>
 
-            <button className="px-6 py-3 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 transition-colors text-sm uppercase tracking-wider font-semibold">
-              Suivre le Développement
-            </button>
+              <button className="rounded-2xl border border-white/10 bg-white/[0.03] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white/80 transition-all duration-500 hover:border-white/20 hover:bg-white/[0.06] hover:text-white">
+                Development Journal
+              </button>
+            </div>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="mt-24 grid gap-6 md:grid-cols-3">
+            {[
+              "Immersive Motorsport UI",
+              "Maintainable Engineering",
+              "Progressive Ecosystem",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-3xl border border-white/[0.08] bg-white/[0.025] p-6 backdrop-blur-sm"
+              >
+                <div className="mb-4 h-px w-16 bg-red-500" />
+
+                <p className="text-sm uppercase tracking-[0.18em] text-white/70">
+                  {item}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -65,118 +140,128 @@ export default function JLSimracingLanding() {
       {/* Vision */}
       <section
         id="vision"
-        className="relative z-10 px-8 md:px-20 py-20 border-t border-white/5"
+        className="relative z-10 border-t border-white/[0.05] px-6 py-28 md:px-10"
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
           <div>
-            <p className="text-red-400 uppercase tracking-[0.25em] text-sm mb-4">
+            <p className="text-xs uppercase tracking-[0.35em] text-red-500">
               Vision
             </p>
 
-            <h3 className="text-4xl font-bold leading-tight max-w-xl">
-              Une immersion motorsport pensée avec simplicité intelligente.
+            <h3 className="mt-6 max-w-xl text-4xl font-bold leading-tight md:text-5xl">
+              Construire une immersion cockpit disciplinée et cohérente.
             </h3>
           </div>
 
-          <div className="space-y-6 text-white/70 leading-relaxed text-lg">
+          <div className="space-y-8 text-lg leading-relaxed text-white/60">
             <p>
-              JL Simracing ne cherche pas à devenir un simple setup gaming RGB.
-              Chaque décision est guidée par l’immersion, la cohérence système,
-              les sensations mécaniques et un engineering maintenable.
+              JL Simracing explore une approche inspirée du motorsport GT3,
+              endurance et Formula moderne autour de l’engineering cockpit.
             </p>
 
             <p>
-              L’objectif est de créer une expérience cockpit inspirée des
-              machines GT3, endurance et Formula modernes, tout en restant
-              accessible grâce à des solutions DIY intelligentes et optimisées
-              coût/performance.
+              L’objectif est de créer un environnement immersif où hardware,
+              dashboard UI, feedbacks et architecture système fonctionnent comme
+              un ensemble cohérent.
             </p>
           </div>
         </div>
       </section>
 
-      {/* System Cards */}
+      {/* System */}
       <section
         id="system"
-        className="relative z-10 px-8 md:px-20 py-20"
+        className="relative z-10 px-6 py-28 md:px-10"
       >
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {[
-            {
-              title: 'Dashboard UI',
-              text: 'Dashboards motorsport ultra lisibles développés autour de l’ESP32-S3 et LVGL.',
-            },
-            {
-              title: 'RPM LEDs',
-              text: 'Retour visuel périphérique conçu pour accompagner naturellement le pilotage.',
-            },
-            {
-              title: 'Haptics',
-              text: 'Sensations mécaniques subtiles inspirées des véritables voitures de course.',
-            },
-            {
-              title: 'Architecture Système',
-              text: 'Engineering modulaire centré sur la stabilité, la simplicité et la faible latence.',
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-8 hover:border-red-500/30 transition-all"
-            >
-              <div className="h-1 w-12 bg-red-500 rounded-full mb-6" />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+                System Architecture
+              </p>
 
-              <h4 className="text-2xl font-semibold mb-4">{item.title}</h4>
-
-              <p className="text-white/65 leading-relaxed">{item.text}</p>
+              <h3 className="mt-6 max-w-2xl text-4xl font-bold leading-tight md:text-5xl">
+                Architecture cockpit modulaire pensée pour évoluer proprement.
+              </h3>
             </div>
-          ))}
+
+            <p className="max-w-lg text-base leading-relaxed text-white/55">
+              Chaque élément est développé avec une logique d’intégration,
+              stabilité et immersion progressive.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {systemModules.map((module) => (
+              <div
+                key={module.id}
+                className="group relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-8 transition-all duration-500 hover:border-red-500/30 hover:bg-white/[0.04]"
+              >
+                <div className="absolute right-0 top-0 h-32 w-32 bg-red-500/5 blur-3xl transition-all duration-500 group-hover:bg-red-500/10" />
+
+                <p className="text-[11px] uppercase tracking-[0.3em] text-red-400">
+                  System Module {module.id}
+                </p>
+
+                <div className="mt-6 h-px w-14 bg-red-500" />
+
+                <h4 className="mt-8 text-2xl font-semibold text-white">
+                  {module.title}
+                </h4>
+
+                <p className="mt-6 leading-relaxed text-white/60">
+                  {module.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Philosophy */}
       <section
         id="philosophy"
-        className="relative z-10 px-8 md:px-20 py-20 border-t border-white/5"
+        className="relative z-10 border-t border-white/[0.05] px-6 py-28 md:px-10"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-14">
-            <p className="text-red-400 uppercase tracking-[0.25em] text-sm mb-4">
-              Philosophie
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+              Philosophy
             </p>
 
-            <h3 className="text-4xl md:text-5xl font-bold max-w-3xl leading-tight">
-              Le premium par l’expérience.
+            <h3 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
+              Precision over excess.
               <br />
-              Pas par l’excès.
+              Discipline over noise.
             </h3>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
-              <h4 className="text-2xl font-semibold mb-6 text-red-400">
-                Priorités JL Simracing
-              </h4>
+          <div className="mt-16 grid gap-8 md:grid-cols-2">
+            <div className="rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-10">
+              <p className="text-xs uppercase tracking-[0.3em] text-red-500">
+                Core Principles
+              </p>
 
-              <ul className="space-y-4 text-white/70 text-lg">
-                <li>• Immersion et sensations pilote</li>
-                <li>• Systèmes maintenables en solo</li>
-                <li>• Solutions intelligentes low-cost</li>
-                <li>• UX inspirée du motorsport</li>
-                <li>• Architecture modulaire long terme</li>
+              <ul className="mt-10 space-y-6 text-lg text-white/65">
+                <li>• Motorsport inspired immersion</li>
+                <li>• Solo maintainable engineering</li>
+                <li>• Modular architecture</li>
+                <li>• Technical UI consistency</li>
+                <li>• Progressive ecosystem vision</li>
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-white/10 p-8 bg-white/[0.03]">
-              <h4 className="text-2xl font-semibold mb-6 text-red-400">
-                Ce que JL évite
-              </h4>
+            <div className="rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-10">
+              <p className="text-xs uppercase tracking-[0.3em] text-red-500">
+                Avoiding
+              </p>
 
-              <ul className="space-y-4 text-white/70 text-lg">
+              <ul className="mt-10 space-y-6 text-lg text-white/65">
                 <li>• RGB gaming chaos</li>
-                <li>• Complexité inutile</li>
-                <li>• Surcharge de fonctionnalités</li>
-                <li>• Systèmes impossibles à maintenir</li>
-                <li>• Gadgets sans utilité réelle</li>
+                <li>• Visual overload</li>
+                <li>• Unmaintainable systems</li>
+                <li>• Generic startup aesthetics</li>
+                <li>• Overengineered UX</li>
               </ul>
             </div>
           </div>
@@ -186,37 +271,41 @@ export default function JLSimracingLanding() {
       {/* Future */}
       <section
         id="future"
-        className="relative z-10 px-8 md:px-20 py-24"
+        className="relative z-10 px-6 py-32 md:px-10"
       >
-        <div className="rounded-[2rem] border border-red-500/20 bg-gradient-to-br from-red-500/10 to-transparent p-10 md:p-16">
-          <p className="text-red-400 uppercase tracking-[0.25em] text-sm mb-4">
-            Futur Écosystème
-          </p>
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-red-500/15 bg-[linear-gradient(135deg,rgba(185,28,28,0.14),rgba(255,255,255,0.02))] p-10 md:p-20">
+          <div className="max-w-5xl">
+            <p className="text-xs uppercase tracking-[0.35em] text-red-400">
+              Future Ecosystem
+            </p>
 
-          <h3 className="text-4xl md:text-6xl font-black leading-tight max-w-4xl">
-            Plus qu’un volant.
-            <br />
-            Une véritable identité cockpit.
-          </h3>
+            <h3 className="mt-8 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl">
+              More than a setup.
+              <br />
+              A complete cockpit identity.
+            </h3>
 
-          <p className="mt-8 text-lg text-white/70 max-w-3xl leading-relaxed">
-            JL Simracing évolue vers un écosystème cohérent de technologies
-            cockpit immersives, de systèmes d’interactions intelligents et
-            d’expériences inspirées du motorsport moderne.
-          </p>
+            <p className="mt-10 max-w-3xl text-lg leading-relaxed text-white/65">
+              JL Simracing évoluera progressivement vers un environnement
+              immersif complet composé de dashboards, telemetry UI, hardware et
+              technologies inspirées du motorsport moderne.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 px-8 md:px-20 py-10 border-t border-white/5 text-white/40 text-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div>
-          © JL Simracing — Expérience Motorsport Développée en Solo
-        </div>
+      <footer className="relative z-10 border-t border-white/[0.05] px-6 py-10 md:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 text-sm text-white/40 md:flex-row md:items-center">
+          <p>
+            © JL Simracing — Motorsport Immersion Engineered Independently
+          </p>
 
-        <div className="uppercase tracking-[0.2em] text-xs">
-          Construit avec passion, discipline et simplicité intelligente.
+          <p className="text-[11px] uppercase tracking-[0.3em] text-white/35">
+            Built with discipline • immersion • consistency
+          </p>
         </div>
       </footer>
-    </div>
-  )
+    </main>
+  );
 }
